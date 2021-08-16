@@ -16,7 +16,7 @@ export const Stepper = props => {
     className,
     finishButtonText,
     onFinish,
-    onFinishDisabled = false,
+    isFinishDisabled = false,
     onCancel,
     ...other
   } = props;
@@ -65,7 +65,7 @@ export const Stepper = props => {
               onValidateNext={onValidateNext}
               onBack={onBack}
               onFinish={onFinish}
-              onFinishDisabled={onFinishDisabled}
+              isFinishDisabled={isFinishDisabled}
               onCancel={onCancel}/>
           </>
         }

@@ -12,7 +12,7 @@ export const StepperActions = props => {
     onCancel = emptyFn,
     onFinish = emptyFn,
     onBack = emptyFn,
-    onFinishDisabled = false,
+    isFinishDisabled = false,
     onValidateNext,
     finishButtonText,
   } = props;
@@ -48,7 +48,7 @@ export const StepperActions = props => {
       <Button label="Cancelar" onClick={onCancel.bind(activeStep)} type="outline"/>
       {activeStep !== 1 && <Button label="Anterior" onClick={back} className="ml-4"/>}
       {isLast
-        ? <Button label={finishButtonText} onClick={onFinish} disabled={onFinishDisabled} className="ml-4"/>
+        ? <Button label={finishButtonText} onClick={onFinish} disabled={isFinishDisabled} className="ml-4"/>
         : <Button label="Siguiente" onClick={next} className="ml-4"/>}
     </div>
   );
@@ -58,7 +58,7 @@ StepperActions.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   finishButtonText: PropTypes.string,
-  onFinishDisabled: PropTypes.bool,
+  isFinishDisabled: PropTypes.bool,
   onValidateNext: PropTypes.func,
   onCancel: PropTypes.func,
   onFinish: PropTypes.func,

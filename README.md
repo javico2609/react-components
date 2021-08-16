@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# React Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Generic components for react
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+```
+yarn
+ng start or yarn storybook
+```
 
-### `yarn start`
+### Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Wizard
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Outputs**
 
-### `yarn test`
+```
+Stepper ( onFinish, onCancel )
+Step ( onValidateNext, onBack )
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Inputs**
 
-### `yarn build`
+```
+Stepper [ isFinishDisabled, finishButtonText ]
+Step [ title, subTitle, error, isDirty ]
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div className="border-box h-100 p-4 p-sm-none">
+  <Stepper
+    finishButtonText="Pagar"
+    onFinish={onCreateNewReport}
+    isFinishDisabled={!finished && !acceptTermAndConditions}
+    onCancel={onCancel}>
+    <Step
+      title="Datos Generales"
+      subTitle="Ingrese los datos solicitados"
+      error={ui.generalDataStepErrors.length > 0}
+      isDirty={ui.generalDataStepIsDirty}
+      onValidateNext={validateGeneralData}>
+      <GeneralData
+        initialValues={data.generalData}
+        userInfo={userInfo}/>
+    </Step>
+    <Step 
+        title="Forma de Pago"
+        subTitle="Seleccione su forma de pago"
+        error={isNullOrUndefined(data.paymentType)}
+        errorMessage={paymentErrorMessages}
+        isDirty={ui.paymentStepIsDirty}
+        onValidateNext={validateSelectedPayment}
+        onBack={onBackPaymentSelected}>
+      <SelectPayment
+        paymentType={data.paymentType}
+        billInfo={data.billInfo}
+        onEditBillInfo={updateBillInfo}
+        onRemoveBillInfo={deleteBillInfo}
+        onEditPaymentType={updatePaymentType}/>
+    </Step>
+    <Step title="Resumen" subTitle="Verifique los datos de su solicitud">
+      <Resume />
+    </Step>
+  </Stepper>
+</div>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Figure 1-1](screenshots/stepper.png "Figure 1-1")
 
-### `yarn eject`
+## Version
+```0.1```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Authors
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Javier González Rodríguez** - [javico2609](https://github.com/javico2609)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
