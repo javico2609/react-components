@@ -1,0 +1,13 @@
+.stepperContent {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.stepperContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

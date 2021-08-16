@@ -1,0 +1,29 @@
+
+.container {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+
+  display: flex;
+
+  .icon {
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+
+  div {
+    ul {
+      padding-left: 15px;
+    }
+
+    p {
+      flex: 1;
+      margin-bottom: 5px !important;
+    }
+  }
+}

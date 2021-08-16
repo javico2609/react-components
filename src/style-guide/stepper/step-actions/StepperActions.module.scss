@@ -1,0 +1,19 @@
+.buttonsContainer {}
+
+button {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 576px) {
+  .buttonsContainer {
+    flex-direction: column;
+
+    button {
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-bottom: 1rem;
+    }
+  }
+}

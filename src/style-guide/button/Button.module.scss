@@ -1,0 +1,19 @@
+@import "../variable";
+
+.outline {
+  color: $primary;
+  background-color: white;
+  border-color: $primary;
+}
+
+.full {
+  color: white;
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.button {
+  width: 192px;
+  height: 36px;
+  border-radius: 5px;
+}

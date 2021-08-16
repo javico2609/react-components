@@ -1,0 +1,24 @@
+.svgIcon {
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.sizeDefault {
+  font-size: 1.5em;
+}
+
+.sizeSmall {
+  font-size: 1em;
+}
+
+.sizeLarge {
+  font-size: 2em;
+}
+
+.xxLarge {
+  font-size: 3em;
+}

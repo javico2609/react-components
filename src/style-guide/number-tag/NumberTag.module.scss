@@ -1,0 +1,59 @@
+@import "../variable";
+
+.colorDefault, .colorPrimary {
+  background: $primary;
+  color: white;
+}
+
+.colorOutline {
+  background: white;
+  border: 1px solid $primary;
+  color: $primary;
+}
+
+.colorError {
+  background: $error;
+  color: white;
+}
+
+.colorWarning {
+  background: $warning;
+  color: white;
+}
+
+.colorDisabled {
+  background: $disabled;
+  color: white;
+}
+
+.numberTag {
+  user-select: none;
+  border-radius: 50%;
+  display: inline-flex;
+  flex-shrink: 0;
+  text-align: center;
+  font-weight: 600;
+
+  span {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+.sizeDefault {
+  font-size: .75em;
+  width: 24px;
+  height: 24px;
+}
+
+.sizeSmall {
+  font-size: .5em;
+  width: 16px;
+  height: 16px;
+}
+
+.sizeLarge {
+  font-size: 1em;
+  width: 32px;
+  height: 32px;
+}

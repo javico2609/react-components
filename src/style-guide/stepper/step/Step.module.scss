@@ -1,0 +1,73 @@
+@import "../../variable";
+
+.stepContainer {
+  position: relative;
+  display: none;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+  margin: 0 0;
+  padding: 1.14285714em 2em;
+  background: #fff;
+  color: rgba(0, 0, 0, .87);
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid rgba(34, 36, 38, .15);
+  border-right: none;
+  flex: 1;
+
+  @media (min-width: 576px) {
+    display: flex;
+
+    &:after {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      content: '';
+      top: 50%;
+      right: -1px;
+      //border: medium none;
+      background-color: #fff;
+      width: 1.14285714em;
+      height: 1.14285714em;
+      border-style: solid;
+      border-color: rgba(34, 36, 38, .15);
+      border-width: 0 1px 1px 0;
+      transition: background-color .1s ease, opacity .1s ease, color .1s ease, box-shadow .1s ease;
+      transform: translateY(-50%) translateX(50%) rotate(-45deg);
+    }
+  }
+}
+
+.stepLabelContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+
+  .stepSubTitle {}
+}
+
+.active {
+  display: flex;
+  @media (min-width: 576px) {
+    border-bottom: 5px solid $primary;
+  }
+
+  .stepTitle {
+    color: $primary;
+    font-weight: 700;
+  }
+}
+
+.error {
+  @media (min-width: 576px) {
+    border-bottom: 5px solid $error;
+  }
+}
+
+.last {
+  border-right: 1px solid rgba(34, 36, 38, .15);
+  &:after {
+    display: none;
+  }
+}
